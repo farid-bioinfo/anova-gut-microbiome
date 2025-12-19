@@ -1,0 +1,23 @@
+TWO-WAY ANOVA RESULTS
+=====================
+
+Research Question: Do diet and probiotics interact to affect diversity?
+
+Group Means:
+           diet probiotic diversity
+1 Mediterranean        No  3.180406
+2    Vegetarian        No  3.898948
+3       Western        No  4.512374
+4 Mediterranean       Yes  5.259024
+5    Vegetarian       Yes  3.806967
+6       Western       Yes  4.472719
+
+
+ANOVA Table:
+               Df Sum Sq Mean Sq F value   Pr(>F)    
+diet            2  6.180   3.090   10.54 8.21e-05 ***
+probiotic       1  9.477   9.477   32.34 1.83e-07 ***
+diet:probiotic  2 23.003  11.502   39.25 9.21e-13 ***
+Residuals      84 24.616   0.293                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

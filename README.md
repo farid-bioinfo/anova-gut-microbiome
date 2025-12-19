@@ -175,38 +175,3 @@ databases).
 **Farid Hakimi**\
 Aspiring Bioinformatician \| MSc Biostatistics & Bioinformatics\
 GitHub: [\@farid-bioinfo](https://github.com/farid-bioinfo)
-
-# Check if output files exist
-list.files("outputs/", pattern = "*.png")
-
-# Recreate the missing plot
-library(ggplot2)
-set.seed(123)
-
-mediterranean <- rnorm(30, mean = 4.5, sd = 0.6)
-western <- rnorm(30, mean = 3.2, sd = 0.7)
-vegetarian <- rnorm(30, mean = 4.0, sd = 0.5)
-
-microbiome_data <- data.frame(
-  diversity = c(mediterranean, western, vegetarian),
-  diet = rep(c("Mediterranean", "Western", "Vegetarian"), each = 30)
-)
-
-ggplot(microbiome_data, aes(x = diet, y = diversity, fill = diet)) +
-  geom_boxplot(alpha = 0.7) +
-  geom_jitter(width = 0.2, alpha = 0.3) +
-  labs(
-    title = "Gut Microbiome Diversity Across Diet Groups",
-    subtitle = "Shannon Diversity Index (Higher = More Diverse)",
-    x = "Diet Type",
-    y = "Shannon Diversity Index",
-    caption = "One-Way ANOVA Analysis | Day 9 Training"
-  ) +
-  theme_minimal() +
-  theme(legend.position = "none")
-
-ggsave("outputs/01_diet_diversity_boxplot.png", width = 8, height = 6, dpi = 300)
-
-cat("✅ Plot created!\n")
-
-list.files("outputs/", pattern = "*.png")
